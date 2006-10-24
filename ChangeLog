@@ -1,5 +1,0 @@
-2006-7-14	Sayamindu Dasgupta <sayamindu@gnu.org.in>
-	src/hippo.c:
-	
-	Added gdk_notify_startup_complete () since it is not called automatically in case of a 
-	status icon.
