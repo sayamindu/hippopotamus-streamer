@@ -1,0 +1,57 @@
+
+AC_INIT([Hippopotamus], [0.1])
+AC_CONFIG_SRCDIR(src/hippo.c)
+
+AM_INIT_AUTOMAKE
+AM_CONFIG_HEADER(config.h)
+AM_MAINTAINER_MODE
+
+AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
+
+IT_PROG_INTLTOOL([0.34.90])
+
+AC_PROG_CC
+AC_HEADER_STDC
+AM_PROG_LIBTOOL
+AC_PATH_PROG(GCONFTOOL, gconftool-2)
+AM_GCONF_SOURCE_2
+
+
+changequote(,)dnl
+if test "x$GCC" = "xyes"; then
+  case " $CFLAGS " in
+  *[\ \	]-Wall[\ \	]*) ;;
+  *) CFLAGS="$CFLAGS -Wall" ;;
+  esac
+fi
+changequote([,])dnl
+
+if test "x$prefix" = "xNONE"; then
+  GNOMELOCALEDIR=$ac_default_prefix/share/locale
+else
+  GNOMELOCALEDIR=$prefix/share/locale
+fi
+AC_DEFINE_UNQUOTED(GNOMELOCALEDIR, "$GNOMELOCALEDIR", [Locate directory])
+
+PKG_CHECK_MODULES(PACKAGE, [gconf-2.0 gtk+-2.0 libglade-2.0 gstreamer-0.10])
+
+GETTEXT_PACKAGE=hippopotamus
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [The gettext package])
+
+AM_GLIB_GNU_GETTEXT
+
+dnl Get the GConf defaults source, and sed it to make the mandatory source.
+GCONF_DEFAULTS_SOURCE=`gconftool-2 --get-default-source`
+
+AC_CONFIG_FILES([
+Makefile
+data/Makefile
+data/icons/Makefile
+src/Makefile
+po/Makefile.in
+])
+
+AC_OUTPUT([
+data/hippopotamus.desktop.in
+])

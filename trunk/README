@@ -1,0 +1,20 @@
+What is Hippopotamus ?
+======================
+
+Hippopotamus is a simple GStreamer/GTK based application which lets you stream 
+Ogg/Theora video to a IceCast server. In other words, it makes creating  video 
+source for IceCast (2.x) very easy.
+At present, it can only stream video data from v4l devices (webcames, etc) - but I 
+plan to add support for audio within the next one or two releases. Hippopotamus was 
+inspired by the screencasting software Istanbul, and copies heavily from it.
+
+The name Hippopotamus
+=====================
+
+Well, I think I like hippopotami. My friend Sayan, however, thinks otherwise - and 
+here's his explanation for the name:
+Hippos -> Ancient Greek word for horse - signifying fast.
+Potamos -> Ancient Greek word for river, or if you see it as we do, a stream.
+So, the combination of Hippos and Potamos, ie, Hippopotamus stands for fast streamer.
+OK - that was Sayan's explanation, and not mine - I'll simply stick to the fact that I 
+have a fascination for hippopotami, and I like hippopotami.
