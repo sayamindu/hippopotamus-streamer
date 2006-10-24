@@ -1,0 +1,19 @@
+Short term:
+	* Add support for audio
+	* Add support for IEEE1394 (Firewire) devices
+	* Add support for streaming random video files from disk
+	* Add support for saving streams to disk
+	* i18n support
+
+Long term:
+	* Handle multiple devices in a graceful manner
+		(Right now it blindly pokes /dev/video0)
+	* Ability to switch off audio/video whenever required
+	* Video effects (yay!!)
+	* Logo (image) overlay support
+	* Text overlay positioning support 
+		(so that you can have text overlay on the center of
+		the screen)
+	* Documentation 
+		(This should seriously go into the short term goals, 
+		but I'm too lazy I guess)
