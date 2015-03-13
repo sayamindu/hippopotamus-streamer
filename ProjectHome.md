@@ -1,0 +1,1 @@
+Hippopotamus is a simple GStreamer/GTK based application which lets you stream Ogg/Theora video to a Icecast server. In other words, it acts as an easy to use source client for Icecast2. It supports the v4l and v4l2 API for grabbing video data, and ALSA/OSS for getting audio input.
